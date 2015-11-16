@@ -1,3 +1,5 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
   devise_for :users
 
@@ -6,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   root to: "documents#new"
+
+  mount Sidekiq::Web => "/jobs"
 end
