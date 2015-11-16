@@ -1,0 +1,7 @@
+<h1>Upload a document</h1>
+
+<%= form_tag documents_path, multipart: true do %>
+  <textarea name="description" placeholder="Add description" class="form-control"></textarea>
+  <%= file_field_tag "document" %>
+  <button class="btn btn-success">Upload</button>
+<% end %>
