@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  line_count: 1
+  completely_uploaded: false
+
+two:
+  name: MyString
+  description: MyText
+  line_count: 1
+  completely_uploaded: false

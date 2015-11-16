@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116155525) do
+ActiveRecord::Schema.define(version: 20151116160444) do
+
+  create_table "documents", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "line_count"
+    t.boolean  "completely_uploaded", default: false, null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  create_table "lines", force: :cascade do |t|
+    t.integer  "document_id"
+    t.text     "content"
+    t.integer  "number"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "lines", ["document_id"], name: "index_lines_on_document_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
